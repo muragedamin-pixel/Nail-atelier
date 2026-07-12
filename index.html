@@ -268,68 +268,6 @@
     white-space:nowrap;
   }
 
-  /* ---------- THE FLIGHT (swatch signature) ---------- */
-  .flight-strip{
-    display:flex;
-    gap:10px;
-    align-items:stretch;
-    height:280px;
-    border-radius:6px;
-    overflow:hidden;
-  }
-  .swatch{
-    position:relative;
-    flex:1;
-    cursor:pointer;
-    display:flex;
-    align-items:flex-end;
-    padding:20px;
-    overflow:hidden;
-    transition:flex-grow .5s cubic-bezier(.2,.8,.2,1);
-  }
-  .swatch::before{
-    content:"";
-    position:absolute; inset:0;
-    background:linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.34) 40%, transparent 60%);
-    transform:translateX(-120%);
-    transition:transform .7s ease;
-  }
-  .swatch:hover{ flex-grow:2.4; }
-  .swatch:hover::before{ transform:translateX(120%); }
-  .swatch .tag{
-    color:rgba(255,255,255,0.94);
-    opacity:0; transform:translateY(10px);
-    transition:opacity .35s ease, transform .35s ease;
-  }
-  .swatch:hover .tag{ opacity:1; transform:translateY(0); }
-  .swatch .tag .name{
-    font-family:var(--display);
-    font-style:italic;
-    font-size:19px;
-    display:block;
-  }
-  .swatch .tag .code{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.05em;
-    opacity:0.85;
-  }
-  .s1{ background:#7A1F2B; }
-  .s2{ background:#C98B6E; }
-  .s3{ background:#E3B9BA; }
-  .s4{ background:#4A2137; }
-  .s5{ background:#3E4A34; }
-  .s6{ background:#A9825A; }
-  .s7{ background:#1E1712; }
-
-  .flight-caption{
-    margin-top:18px;
-    font-family:var(--mono);
-    font-size:12px;
-    color:var(--ink-soft);
-    letter-spacing:0.02em;
-  }
-
   /* ---------- JOURNEY ---------- */
   .journey-list{
     display:grid;
@@ -379,31 +317,6 @@
   }
 
   /* ---------- BOOK / FOOTER ---------- */
-  .book{
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:60px;
-    align-items:start;
-  }
-  .book h2{
-    font-family:var(--display);
-    font-weight:450;
-    font-size:clamp(32px,4vw,50px);
-    margin:0 0 20px;
-    line-height:1.05;
-  }
-  .book p{ color:var(--ink-soft); line-height:1.6; max-width:420px; margin:0 0 30px;}
-  .details{ font-size:14.5px; line-height:2; }
-  .details .label{
-    font-family:var(--mono);
-    font-size:11.5px;
-    color:var(--oxblood);
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    display:block;
-    margin-top:18px;
-  }
-  .details .label:first-child{ margin-top:0; }
 
   footer.site-foot{
     border-top:1px solid var(--line);
@@ -449,8 +362,7 @@
   </nav>
 </header>
 
-<section class="hero wrap"
-  style="background-image: url('design1.png')"; width: 100vh; height: 100%;>
+<section class="hero wrap">
   <div>
     <div class="eyebrow">Nail Atelier · Six chairs, by appointment</div>
     <h1>The manicure,<br><em>reconsidered.</em></h1>
@@ -533,25 +445,6 @@
   </div>
 </section>
 
-<section id="flight">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>The Flight</h2>
-      <p>This season's library. Hover a shade to read it — each one is mixed in-house.</p>
-    </div>
-    <div class="flight-strip reveal">
-      <div class="swatch s1"><div class="tag"><span class="name">Oxblood</span><span class="code">No. 04 · gloss</span></div></div>
-      <div class="swatch s2"><div class="tag"><span class="name">Terracotta Nude</span><span class="code">No. 11 · satin</span></div></div>
-      <div class="swatch s3"><div class="tag"><span class="name">Blush Milk</span><span class="code">No. 02 · sheer</span></div></div>
-      <div class="swatch s4"><div class="tag"><span class="name">Plum Ink</span><span class="code">No. 09 · gloss</span></div></div>
-      <div class="swatch s5"><div class="tag"><span class="name">Moss</span><span class="code">No. 14 · matte</span></div></div>
-      <div class="swatch s6"><div class="tag"><span class="name">Brass</span><span class="code">No. 07 · metallic</span></div></div>
-      <div class="swatch s7"><div class="tag"><span class="name">Ink Black</span><span class="code">No. 01 · gloss</span></div></div>
-    </div>
-    <div class="flight-caption reveal">Library rotates quarterly — ask your artist what's new this season.</div>
-  </div>
-</section>
-
 <section id="journey" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="section-head reveal">
@@ -586,25 +479,7 @@
     </blockquote>
   </div>
 </section>
-
-<section id="book">
-  <div class="wrap book">
-    <div class="reveal">
-      <h2>Reserve your hour.</h2>
-      <p>Chairs open two weeks out. Walk-ins accepted when a slot allows — call ahead to check the day's board.</p>
-      <a class="btn btn-primary" href="#" onclick="return false;">Book a chair</a>
-    </div>
-    <div class="details reveal">
-      <span class="label">Hours</span>
-      Tue – Sat, 10am – 7pm<br>Closed Sun & Mon
-      <span class="label">Studio</span>
-      By appointment · six chairs
-      <span class="label">Contact</span>
-      hello@vernis-atelier.com<br>@vernis.atelier
-    </div>
-  </div>
-</section>
-
+  
 <footer class="site-foot wrap">
   <div>VERNIS — nail atelier</div>
   <div>© 2026</div>
